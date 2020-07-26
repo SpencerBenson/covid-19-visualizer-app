@@ -18,7 +18,7 @@ const Chart = ({data:{confirmed,deaths,recovered},country}) => {
         dailyData.length ?
             (<Line
                 data={{
-                    labels: dailyData.map(({date}) => new Date(date).toDateString()),
+                    labels: dailyData.map(({date}) => new Date(date).toLocaleDateString('en-GB')),
                     datasets: [{
                         data: dailyData.map(({confirmed}) => confirmed),
                         label: 'Infected',
